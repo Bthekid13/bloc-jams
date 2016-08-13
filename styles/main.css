@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 html {
   height: 100%;
   font-size: 100%;
@@ -42,11 +41,12 @@ body {
   display: table-cell;
   position: relative;
   height: 100%;
+  padding-top: 0.3rem;
   padding-left: 1rem;
   padding-right: 1rem;
   vertical-align: middle;
   color: white;
-  font-size: 0.625rem;
+  font-size: 0.7rem;
   letter-spacing: 0.05rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -56,6 +56,18 @@ body {
 
 .links-container .navbar-link:hover {
   color: rgb(233, 50, 117);
+  text-decoration: none;
+
+}
+
+.links-container .navbar-link:active {
+  color: white;
+}
+
+.links-container .navbar-link:visited {
+  color: white;
+  text-decoration: none;
+  text-transform: none;
 }
 
 .clearfix::before, .clearfix::after {
