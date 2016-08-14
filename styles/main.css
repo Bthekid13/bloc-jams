@@ -54,22 +54,23 @@ body {
   cursor: pointer;
 }
 
-.links-container .navbar-link:visited {
+.navbar-link {
+  color: white;
   text-decoration: none;
-  text-transform: none;
 }
 
 .links-container .navbar-link:hover {
   color: rgb(233, 50, 117);
   text-decoration: none;
-
 }
 
 .links-container .navbar-link:active {
   color: white;
 }
 
-
+.container.narrow {
+  max-width: 56rem;
+}
 
 .clearfix::before, .clearfix::after {
   content: " ";
