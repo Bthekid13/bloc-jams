@@ -4,7 +4,7 @@ var albumPicasso = {
   artist: 'Pablo Picasso',
   label: 'Cubism',
   year: '1881',
-  albumArtUrl: 'assests/images/album_covers/01.png',
+  albumArtUrl: 'assets/images/album_covers/01.png',
   // songs' value is an array, containing mini objects
   songs: [
     { title: 'Blue', duration: '4:26' },
@@ -30,6 +30,7 @@ var albumMarconi = {
   ]
 };
 
+
 function createSongRow(songNumber, songName, songLength) {
   var template = 
     '<tr class="album-view-song-item">'
@@ -43,14 +44,7 @@ function createSongRow(songNumber, songName, songLength) {
 };
 
 var setCurrentAlbum = function(album) {
-  // #1
   var albumTitle = document.getElementsByClassName('album-view-title')[0];
-};
-
-
-
-var setCurrentAlbum = function(album) {
-  var albumTitle = document.getElementByClassName('album-view-title')[0];
   var albumArtist = document.getElementsByClassName('album-view-artist')[0];
   var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
   var albumImage = document.getElementsByClassName('album-cover-art')[0];
@@ -64,13 +58,13 @@ var setCurrentAlbum = function(album) {
   albumSongList.innerHTML = '';
   
   for (var i = 0; i < album.songs.length; i++) {
-    albumSongList.innerHTML += createSongRow(i + 1, album.songs[i], album.songs[i].duration);
+    albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
   }
 };
 
 window.onload = function() {
-  setCurrentAlbum(albumPicasso)
-}
+  setCurrentAlbum(albumPicasso);
+};
 
 
 
