@@ -1,19 +1,44 @@
 // making a fat obj 
-var albumPicasso = {
-  title: 'The Colors',
-  artist: 'Pablo Picasso',
-  label: 'Cubism',
-  year: '1881',
-  albumArtUrl: 'assests/images/album_covers/01.png',
-  // songs' value is an array, containing mini objects
+
+var sgtPepper = {
+  title: "Sgt. Pepper's Lonely Hearts Club Band",
+  artist: "The Beatles",
+  label: "Parlophone (UK), Capitol (US)",
+  year: '1967',
+  albumArtUrl: 'assests/images/album_covers/sgt_pepper.png',
   songs: [
-    { title: 'Blue', duration: '4:26' },
-    { title: 'Green', duration: '3:14'},
-    { title: 'Red', duration: '5:01' },
-    { title: 'Pink', duration: '3:21' },
-    { title: 'Magenta', duration: '2:15' }
+ { title: "Sgt. Pepper's Lonely Hearts Club Band", duration: "2:02"},   
+ { title: "With a Little Help from My Friends", duration: "2:44"},
+ { title: "Lucy in the Sky with Diamonds", duration: "3:28"},	
+ { title: "Getting Better", duration: "2:48"},	
+ { title: "Fixing a Hole", duration: "2:36"},	
+ { title: "She's Leaving Home", duration: " 3:35"},	
+ { title: "Being for the Benefit of Mr. Kite!" , duration: "2:37"},
+ { title: "Within You Without You", duration: "5:04"},
+ { title: "When I'm Sixty-Four", duration: "2:37"},	
+ { title: "Lovely Rita" , duration: "2:42"},
+ { title: "Good Morning Good Morning", duration: "2:41"},	
+ { title: "Sgt. Pepper's Lonely Hearts Club Band (Reprise)", duration: " 1:19"},
+ { title: "A Day in the Life" , duration: "5:39"}
   ]
 };
+
+
+//var albumPicasso = {
+//  title: 'The Colors',
+//  artist: 'Pablo Picasso',
+//  label: 'Cubism',
+//  year: '1881',
+//  albumArtUrl: 'assests/images/album_covers/01.png',
+//  // songs' value is an array, containing mini objects
+//  songs: [
+//    { title: 'Blue', duration: '4:26' },
+//    { title: 'Green', duration: '3:14'},
+//    { title: 'Red', duration: '5:01' },
+//    { title: 'Pink', duration: '3:21' },
+//    { title: 'Magenta', duration: '2:15' }
+//  ]
+//};
 
 var albumMarconi = {
   title: 'The Telephone',
@@ -69,7 +94,7 @@ var setCurrentAlbum = function(album) {
 };
 
 window.onload = function() {
-  setCurrentAlbum(albumPicasso)
+  setCurrentAlbum(sgtPepper)
 }
 
 
