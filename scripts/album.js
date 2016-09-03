@@ -1,11 +1,11 @@
 // making a fat obj 
 
-var sgtPepper = {
+var albumSgtPepper = {
   title: "Sgt. Pepper's Lonely Hearts Club Band",
   artist: "The Beatles",
   label: "Parlophone (UK), Capitol (US)",
   year: '1967',
-  albumArtUrl: 'assests/images/album_covers/sgt_pepper.png',
+  albumArtUrl: 'assets/images/album_covers/sgt_pepper.png',
   songs: [
  { title: "Sgt. Pepper's Lonely Hearts Club Band", duration: "2:02"},   
  { title: "With a Little Help from My Friends", duration: "2:44"},
@@ -23,22 +23,20 @@ var sgtPepper = {
   ]
 };
 
-
-//var albumPicasso = {
-//  title: 'The Colors',
-//  artist: 'Pablo Picasso',
-//  label: 'Cubism',
-//  year: '1881',
-//  albumArtUrl: 'assests/images/album_covers/01.png',
-//  // songs' value is an array, containing mini objects
-//  songs: [
-//    { title: 'Blue', duration: '4:26' },
-//    { title: 'Green', duration: '3:14'},
-//    { title: 'Red', duration: '5:01' },
-//    { title: 'Pink', duration: '3:21' },
-//    { title: 'Magenta', duration: '2:15' }
-//  ]
-//};
+var albumPicasso = {
+  title: 'The Colors',
+  artist: 'Pablo Picasso',
+  label: 'Cubism',
+  year: '1881',
+  albumArtUrl: 'assets/images/album_covers/01.png',
+  songs: [
+    { title: 'Blue', duration: '4:26' },
+    { title: 'Green', duration: '3:14'},
+    { title: 'Red', duration: '5:01' },
+    { title: 'Pink', duration: '3:21' },
+    { title: 'Magenta', duration: '2:15' }
+  ]
+};
 
 var albumMarconi = {
   title: 'The Telephone',
@@ -67,19 +65,14 @@ function createSongRow(songNumber, songName, songLength) {
   return template;
 };
 
-var setCurrentAlbum = function(album) {
-  // #1
   var albumTitle = document.getElementsByClassName('album-view-title')[0];
-};
-
-
-
-var setCurrentAlbum = function(album) {
-  var albumTitle = document.getElementByClassName('album-view-title')[0];
   var albumArtist = document.getElementsByClassName('album-view-artist')[0];
   var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
   var albumImage = document.getElementsByClassName('album-cover-art')[0];
   var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
+
+
+var setCurrentAlbum = function(album) {
   
   albumTitle.firstChild.nodeValue = album.title;
   albumArtist.firstChild.nodeValue = album.artist;
@@ -89,13 +82,26 @@ var setCurrentAlbum = function(album) {
   albumSongList.innerHTML = '';
   
   for (var i = 0; i < album.songs.length; i++) {
-    albumSongList.innerHTML += createSongRow(i + 1, album.songs[i], album.songs[i].duration);
+    albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
   }
 };
 
 window.onload = function() {
-  setCurrentAlbum(sgtPepper)
-}
+  setCurrentAlbum(albumPicasso);
+  
+   var albums = [albumPicasso, albumMarconi, albumSgtPepper];
+   var index = 1;
+  
+  albumImage.addEventListener("click", function(event) {
+    setCurrentAlbum(albums[index]);
+    index++;
+    if (index === albums.length) {
+      index = 0;
+    }  
+    
+  });
+  
+};
 
 
 
