@@ -44,7 +44,6 @@ var createSongRow = function(songNumber, songName, songLength) {
             currentSoundFile.play();
           } 
           else {
->>>>>>> JS-buzz
             $(this).html(playButtonTemplate);
             $('.main-controls .play-pause').html(playerBarPlayButton);
             currentSoundFile.pause();
@@ -192,13 +191,13 @@ var setSong = function(songNumber) {
   
   setVolume(currentVolume);
 };
-};
 
 var setVolume = function(volume) {
   if (currentSoundFile) {
     currentSoundFile.setVolume(volume);
   }
 };
+
 
 var togglePlayFromPlayerBar = function() {
   var $currentlyPlayingCell = getSongNumberCell(currentlyPlayingSongNumber);
@@ -213,6 +212,7 @@ var togglePlayFromPlayerBar = function() {
     currentSoundFile.pause();
   } 
 };
+
 
 var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
 var pauseButtonTemplate = '<a class="album-song-button"><span class="ion-pause"></span></a>';
